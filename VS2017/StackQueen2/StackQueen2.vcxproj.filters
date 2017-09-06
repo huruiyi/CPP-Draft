@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="point.c">
+    <ClCompile Include="StackQueen2.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

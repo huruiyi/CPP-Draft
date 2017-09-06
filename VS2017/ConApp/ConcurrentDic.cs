@@ -1,7 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 
-namespace CSConcurrent
+namespace ConApp
 {
     public class ConcurrentDic<T>
     {

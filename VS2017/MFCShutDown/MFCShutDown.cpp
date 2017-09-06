@@ -1,4 +1,3 @@
-
 // MFCShutDown.cpp : 定义应用程序的类行为。
 //
 
@@ -10,13 +9,11 @@
 #define new DEBUG_NEW
 #endif
 
-
 // CMFCShutDownApp
 
 BEGIN_MESSAGE_MAP(CMFCShutDownApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
-
 
 // CMFCShutDownApp 构造
 
@@ -29,11 +26,9 @@ CMFCShutDownApp::CMFCShutDownApp()
 	// 将所有重要的初始化放置在 InitInstance 中
 }
 
-
 // 唯一的一个 CMFCShutDownApp 对象
 
 CMFCShutDownApp theApp;
-
 
 // CMFCShutDownApp 初始化
 
@@ -56,7 +51,6 @@ BOOL CMFCShutDownApp::InitInstance()
 		AfxMessageBox(IDP_SOCKETS_INIT_FAILED);
 		return FALSE;
 	}
-
 
 	AfxEnableControlContainer();
 
@@ -109,4 +103,3 @@ BOOL CMFCShutDownApp::InitInstance()
 	//  而不是启动应用程序的消息泵。
 	return FALSE;
 }
-

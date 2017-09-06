@@ -8,6 +8,45 @@
 #include<rdpappcontainerclient.h>
 #include<winsock.h>
 
+struct {
+	char member[10];
+} ma, mb;
+
+union
+{
+	int i;
+	char x[2];
+}intc;
+
+typedef struct _str_type
+{
+	int _len;
+	char _s[1];
+}str_type;
+
+typedef void(*MYPROC)(LPTSTR);
+
+int IsHELLOORWORLD(const char * src, const char * constval)
+{
+	if (src == NULL)
+	{
+		return 0;
+	}
+	int i = 0;
+	int len = strlen(src);
+	if (len == 0)
+	{
+		return 0;
+	}
+	for (int i = 0; i < len; i++)
+	{
+		if (constval[i] != src[i])
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
 void demo_数组指针()
 {
 	printf("栈区数组元素的增长方向：\n");
@@ -36,7 +75,6 @@ void demo_数组指针()
 		printf("\n");
 	}
 }
-
 void demo_指针数组()
 {
 	int a = 123;
@@ -79,7 +117,6 @@ void demo_指针数组()
 	}
 	system("pause");
 }
-
 void demo0(int *a)
 {
 	*a = 100;
@@ -92,7 +129,6 @@ void test0()
 
 	printf("%d\n", a);
 }
-
 void demo1(int *a)
 {
 	*a = 100;
@@ -105,7 +141,6 @@ void test1()
 	demo1(p);
 	printf("%d\n", a);
 }
-
 void demo2(int **a)
 {
 	**a = 100;
@@ -118,7 +153,6 @@ void test2()
 	demo2(pp);
 	printf("%d\n", a);
 }
-
 void demo3(char * p)
 {
 	//p为空不能赋值的
@@ -142,27 +176,18 @@ void demo4(char * p)
 {
 	//strcpy(p, "Hello");
 }
-
 void test4()
 {
 	char arr[100];
 	demo4(arr);
 	printf(arr);
 }
-
-typedef struct _str_type
-{
-	int _len;
-	char _s[1];
-}str_type;
-
 void test5()
 {
 	char _s[2] = { 0 };
 	_s[0] = 's';
 	printf("%s\n", _s);
 }
-
 void test6()
 {
 	int a1, b1;
@@ -178,21 +203,18 @@ void test6()
 	p2 = &b2;
 	p2++;
 }
-
 void test7()
 {
 	int str_len = 5;
 	str_type *s = (str_type*)malloc(sizeof(str_type) + str_len - 1);
 	free(s);
 }
-
 void test8()
 {
 	char *s = "\ta\018bc";
 	for (; *s != '\0'; s++)
 		printf("*\n");
 }
-
 void test9()
 {
 	//char buf[5] = "12345";
@@ -200,14 +222,12 @@ void test9()
 	//char buf[5] = {0};
 	printf("%s\n", buf);
 }
-
 void test10()
 {
 	int a[5] = { 1,2,3,4,5 };
 	int *p = (int *)(&a + 1);
 	printf("%d", *(p - 1));
 }
-
 void test11()
 {
 	//a[1][1]
@@ -217,7 +237,6 @@ void test11()
 	int a3 = *(&a[1] + 1);
 	int a4 = *(a[1] + 1);
 }
-
 void test12()
 {
 #define SUB( X,Y ) (X+1)*Y
@@ -225,35 +244,11 @@ void test12()
 	int a = 3, b = 4;
 	printf("%d\n", SUB(a++, b++));
 }
-
 void test13()
 {
 	int k = 17;
 	printf("%d, %o, %x\n", k, k, k);
 }
-
-int IsHELLOORWORLD(const char * src, const char * constval)
-{
-	if (src == NULL)
-	{
-		return 0;
-	}
-	int i = 0;
-	int len = strlen(src);
-	if (len == 0)
-	{
-		return 0;
-	}
-	for (int i = 0; i < len; i++)
-	{
-		if (constval[i] != src[i])
-		{
-			return 0;
-		}
-	}
-	return 1;
-}
-
 void test14()
 {
 	int a[5][2] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -271,14 +266,12 @@ void test14()
 	printf("%x,%x,%x\n", a[0], &a[0], &a[0][0]);
 	printf("%x,%x,%x\n", a[0] + 1, &a[0] + 1, &a[0][0] + 1);
 }
-
 void test15()
 {
 	char *s = "\ta\018bc";
 	char ch[20] = { 0 };
 	strcpy(ch, s);
 }
-
 void test16()
 {
 	//LPCWSTR lpLibFileName=;
@@ -297,8 +290,6 @@ void test16()
 	//else
 	//	;// Unable to locate entry point
 }
-typedef void(*MYPROC)(LPTSTR);
-
 void WinAPI()
 {
 	LPPOINT lpPoint = (LPPOINT)malloc(sizeof(LPPOINT));
@@ -345,7 +336,6 @@ void WinAPI()
 	//	wParam,                // message-specific value
 	//	lParam);              // message-specific value
 }
-
 void test17()
 {
 	int a = 123;
@@ -354,7 +344,6 @@ void test17()
 
 	printf("%d\n", buf);
 }
-
 /*
 网络字节序IP:2155784384
 
@@ -442,14 +431,324 @@ void test21()
 	//a = b; //error
 	printf("%s\n", a);
 }
-
 void test22()
+{
+	//字符串变量
+	char str1[] = { "hello" };
+	str1[2] = 8;
+	printf("%p：%s\n", str1, str1);
+
+	//char *存储于字符串常量区，其值是不可以修改的
+	//字符串常量，可以读，不可以写
+	const char const *  str2 = { "world" };
+	const  char *str3 = { "world" };
+	const  char *str4 = { "world" };
+	//printf("字符串常量-----修改前");
+
+	//str2, str3, str4,的地址和值是一样的
+	printf("%p：%s\n", str2, str2);
+	printf("%p：%s\n", str3, str3);
+	printf("%p：%s\n", str4, str4);
+
+	str2 = "789456";
+	str3 = "hello";
+	char*p = str2;
+	//str2[2] = 8;//编译成功，运行失败
+
+	printf("%p：%s\n", str2, str2);
+	printf("%p：%s\n", str3, str3);
+	printf("%p：%s\n", str4, str4);
+
+	system("pause");
+}
+void test23()
+{
+	printf("%s\n", ma.member);
+	printf("%s\n", mb.member);
+	int i;
+	for (i = 0; i < 10; i++)
+	{
+		mb.member[i] = 'a';
+	}
+
+	//a.member = b.member; error
+	printf("%s\n", ma.member);
+	printf("%s\n", mb.member);
+	system("pause");
+
+	unsigned int x = 3, y = -2, z = 2;
+	if (x > y)
+		if (y < 0)
+			z = 0;
+		else
+			z += 1;
+	printf("%d", z);
+	system("pause");
+}
+void test24()
+{
+	intc.x[0] = 10;
+	intc.x[1] = 1;
+	printf("a.i = %d", intc.i);
+}
+void test25()
+{
+#define  DOUBLE(X)  1+5+1+5 ;
+	int i = 5 * DOUBLE(X);
+	printf("%d\n", i);
+}
+void test26()
+{
+	char name[50] = "xiaoming";
+
+	char hobby[100];
+	//hobby = "1000";
+	strcpy_s(hobby, sizeof("Hello World"), "Hello World");
+
+	printf("hobby=%s---sizeof=%d---len=%d\n", hobby, sizeof("Hello World"), strlen("Hello World"));
+}
+void test27()
+{
+	char *p = "123456";
+	strcpy(p, "789");//p放在常量区是不可以修改的
+	p = "789"; //p的地址被修改
+	strcpy_s(p, sizeof("Hello World"), "Hello World");//error
+	printf("p=%s---sizeof=%d---len=%d\n", p, sizeof("Hello World"), strlen("Hello World"));
+}
+void test28()
+{
+	char *p = "123456";
+	//strcpy_s(p, sizeof("Hello World"), "Hello World");
+	printf("p=%s---sizeof=%d---len=%d\n", p, sizeof("Hello World"), strlen("Hello World"));
+}
+void test29()
+{
+	char a[4];//没有初始换
+	char *str = &a;
+	strcpy(str, "aa");
+	strcpy(str, "Hello"); //空间不足
+}
+void test30()
+{
+	char *str = "Hello World";
+	int len = strlen(str);
+	//char *dest = (char *)malloc(len);//error
+	char *dest = (char *)malloc(len + 1);
+
+	char * d = dest;
+	//char * s = str[len];//error
+	char * s = str;
+	printf("d=%s\n", d);
+	printf("s=%s\n", s);
+	printf("\n");
+	while (len--)
+	{
+	}
+	printf("d=%s\n", d);
+	printf("s=%s\n", s);
+
+	char *p = "Hello World";
+}
+//指针数组：array of pointers，即用于存储指针的数组，也就是数组元素都是指针
+//数组指针：a pointer to an array，即指向数组的指针
+void test31()
+{
+	int c1[5] = { 65,66,67,68,69 };
+
+	//指针数组,表示数组的元素都是int型指针
+	int *c2[5];
+
+	c2[0] = &c1[0];
+	c2[1] = &c1[1];
+	c2[2] = &c1[2];
+	c2[3] = &c1[3];
+	c2[4] = &c1[4];
+
+	int d2[2][3] = { 10,20,30,40,50,60 };
+
+	//数组指针，表示指向数组的指针
+	int(*c3)[3] = d2;
+
+	int(*c4)[3] = d2;
+	c4[0][0] = d2[0][0];
+	c4[0][1] = d2[0][1];
+	c4[0][2] = d2[0][2];
+
+	c4[1][0] = d2[1][0];
+	c4[1][1] = d2[1][1];
+	c4[1][2] = d2[1][2];
+
+	int i = 0;
+	for (i = 0; i < 5; i++)
+	{
+		printf("c1[%d]=%c---%d\n", i, c1[i], c1[i]);
+	}
+	printf("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+	for (i = 0; i < 5; i++)
+	{
+		printf("c2[%d]=%c---%d\n", i, *c2[i], *c2[i]);
+	}
+	printf("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+
+	for (size_t i = 0; i < 2; i++)
+	{
+		for (size_t j = 0; j < 3; j++)
+		{
+			printf("%d\t", c3[i][j]);
+		}
+		printf("\n");
+	}
+	printf("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n");
+
+	for (size_t i = 0; i < 2; i++)
+	{
+		for (size_t j = 0; j < 3; j++)
+		{
+			printf("%d\t", c4[i][j]);
+		}
+		printf("\n");
+	}
+}
+void test32()
+{
+	int c[4] = { 1,2,3,4 };
+	int *a[4]; //指针数组
+	int(*b)[4]; //数组指针
+	printf("sizeof(a)=%d\n", sizeof(a));
+	printf("sizeof(b)=%d\n", sizeof(b));
+
+	//a++; //error
+	//a + 1; //ok
+	//b++; //ok  步长 为4
+	//b + 1; //ok
+
+	b = &c;
+	//将数组c中元素赋给数组a
+
+	int i = 0;
+	for (i = 0; i < 4; i++)
+	{
+		a[i] = &c[i];
+	}
+
+	for (i = 0; i < 4; i++)
+	{
+		printf("%p\t%d\n", a[i], *a[i]);
+	}
+
+	for (i = 0; i < 4; i++)
+	{
+		printf("%d\n", b[0][i]);
+	}
+}
+char * demo33()
+{
+	//char p[] = "Hello World";//warning: function returns address of local variable [-Wreturn-local-addr]
+	char *p = malloc(100);
+
+	printf("%p\n", p);
+	p = "hello";
+	printf("%p\n", p);
+	//以上printf的p的地址不一样
+
+	return p;
+}
+void test33()
+{
+	char *p = demo33();
+	printf("%s\n", p);
+}
+char * demo34()
+{
+	//char p[] = "Hello World";//warning: function returns address of local variable [-Wreturn-local-addr]
+	char *p = malloc(100);
+
+	printf("%p\n", p);
+	strcpy_s(p, 6, "hello");
+	printf("%p\n", p);
+	//以上printf的p的地址不一样
+
+	return p;
+}
+void test34()
+{
+	char *p = demo34();
+	printf("%s\n", p);
+}
+void demo35(char **p)
+{
+	*p = (char *)malloc(100);
+}
+void test35()
+{
+	char *p = NULL;
+	demo35(&p);
+	//demo35(p);//error
+	strcpy(p, "Hello World");
+	printf("p=%s\n", p);
+	free(p);
+}
+int fn(int x)
+{
+	int f1;
+	int f2;
+	if (x == 1 || x == 2)
+	{
+		return 1;
+	}
+	else
+	{
+		f1 = fn(x - 1);
+	}
+	f2 = fn(x - 2);
+	return f1 + f2;
+}
+void test36()
+{
+	int y = fn(6);
+	printf("%d ", y);
+	system("pause");
+}
+void test37()
+{
+	//char s1[5];
+	//s1 = "abcd"; //编译失败
+	//printf("%s", s1);
+
+	char *s2 = "abcd";
+	printf("%s", s2);
+}
+void test62()
 {
 	//:求0-2000内的所有质数
 }
 void main()
 {
-	test20();
+	test37();
 	system("pause");
 	return 0;
 }
+
+
+/*
+
+1.memmove
+
+void *memmove(void *dest, const void *source, size_t count)
+//返回指向dest的void *指针
+//dest,source分别为目标串和源串的首地址。count为要移动的字符的个数
+//!!!memmove用于从source拷贝count个字符到dest，如果目标区域和源区域有重叠的话，memmove能够保证源串在被覆盖之
+//前将重叠区域的字节拷贝到目标区域中。
+
+2.memcpy
+
+void *memcpy(void *dest, const void *source, size_t count);
+//返回指向dest的void *指针
+//memcpy功能和memmove相同，但是memcpy中dest和source中的区域不能重叠，否则会出现未知结果。
+
+3.两者区别
+函数memcpy()   从source  指向的区域向dest指向的区域复制count个字符，如果两数组重叠，不定义该函数的行为。  而memmove(),如果两函数重叠，赋值仍正确进行。
+
+memcpy函数假设要复制的内存区域不存在重叠，如果你能确保你进行复制操作的的内存区域没有任何重叠，可以直接用memcpy； 如果你不能保证是否有重叠，为了确保复制的正确性，你必须用memmove。
+memcpy的效率会比memmove高一些，如果还不明白的话可以看一些两者的实现：
+*/

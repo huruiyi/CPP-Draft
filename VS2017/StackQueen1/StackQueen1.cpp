@@ -57,7 +57,7 @@ void StackDemo()
 
 	while (!s1.empty())
 	{
-		cout << "size:" << s1.size() << "	top:" << s1.top() <<  endl;
+		cout << "size:" << s1.size() << "	top:" << s1.top() << endl;
 		s1.pop();
 	}
 
