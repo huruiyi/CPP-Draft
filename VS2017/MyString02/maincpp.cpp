@@ -377,9 +377,8 @@ void test20()
 	int x = 1;
 	int y = 2;
 	swap(x, y);
-	cout << x << '-' << y <<'\n';
+	cout << x << '-' << y << '\n';
 }
-
 
 void test21()
 {
@@ -391,7 +390,7 @@ void test21()
 	cout << sizeof(Test);//8
 }
 
-int main() 
+int main()
 {
 	//test8();
 	test19();

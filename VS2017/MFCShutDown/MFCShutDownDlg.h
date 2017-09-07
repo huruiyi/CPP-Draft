@@ -1,14 +1,12 @@
-
 // MFCShutDownDlg.h : 头文件
 //
 
 #pragma once
 
-
 // CMFCShutDownDlg 对话框
 class CMFCShutDownDlg : public CDialogEx
 {
-// 构造
+	// 构造
 public:
 	CMFCShutDownDlg(CWnd* pParent = NULL);	// 标准构造函数
 
@@ -17,9 +15,8 @@ public:
 	enum { IDD = IDD_MFCSHUTDOWN_DIALOG };
 #endif
 
-	protected:
+protected:
 	virtual void DoDataExchange(CDataExchange* pDX);	// DDX/DDV 支持
-
 
 // 实现
 protected:

@@ -192,8 +192,7 @@ BOOL EnableShutDownPriv()
 			break;
 		}
 		bRet = TRUE;
-	} 
-	while (FALSE);
+	} while (FALSE);
 	if (FALSE == bRet)
 	{
 		SetLastError(GetLastError());

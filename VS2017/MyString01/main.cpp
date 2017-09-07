@@ -39,7 +39,6 @@ void MyStringTest()
 	*         MyString operator+(const char  *c);                                    */
 	/************************************************************************/
 
-
 	MyString s6("123456");
 	MyString s7("abcdef");
 
@@ -77,7 +76,6 @@ void MyStringTest()
 	bool operator==(const char *s);                                         */
 	/************************************************************************/
 
-
 	MyString s13 = "abc";
 	MyString s14 = "abc";
 	MyString s15 = "def";
@@ -108,6 +106,6 @@ void MyStringTest()
 int main()
 {
 	MyStringTest();
-    system("pause");
-    return 0;
+	system("pause");
+	return 0;
 }

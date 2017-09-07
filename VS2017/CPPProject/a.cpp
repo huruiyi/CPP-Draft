@@ -24,7 +24,6 @@ public:
 	~Person() {}
 };
 
-
 template<typename T>
 class ListNode
 {
@@ -92,7 +91,7 @@ void test1()
 	//判断2个单向链表的是否有交叉点
 	_list mylist, mylist2;
 
-	for (int i = 0; i<10; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		_listnode *p = new _listnode(i);
 
@@ -114,6 +113,24 @@ void test1()
 	}
 
 	getchar();
+}
+
+void test2()
+{
+	int oarry[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int darry[2][10] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+	int *ptrs[10] = { 0 };
+	for (int i = 0; i < 10; i++)
+	{
+		ptrs[i] = &oarry[i];
+	}
+
+	//int &refs[10];  //不存在引用发数组
+	int(*y1)[10] = &oarry;//Parray指向一个含有10个整数的数组
+	int(*y2)[10] = darry;
+
+	int(&p1)[10] = oarry;
+	int *(&p2)[10] = ptrs; //arry是数组的引用，该数组含有10个指针
 }
 int main()
 {

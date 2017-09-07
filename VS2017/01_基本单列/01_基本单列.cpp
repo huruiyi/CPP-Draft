@@ -56,7 +56,7 @@ int main()
 	HANDLE threadId[100];
 	for (int i = 0; i < threadnum; i++)
 	{
-		threadId[i]=(HANDLE)_beginthread(threadCallBack, 0, (void *)NULL);
+		threadId[i] = (HANDLE)_beginthread(threadCallBack, 0, (void *)NULL);
 	}
 	for (int i = 0; i < threadnum; i++)
 	{

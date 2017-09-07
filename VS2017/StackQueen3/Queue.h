@@ -14,10 +14,8 @@
 #include <sys/types.h>
 #endif
 
-
 namespace lock_free
 {
-
 	typedef int                 int32;
 	typedef unsigned int        uint32;
 
@@ -68,7 +66,6 @@ namespace lock_free
 		int32 m_nWriteAbleCount;
 		int32 m_nReadAbleCount;
 	};
-
 }
 
 #endif // QUEUE_H

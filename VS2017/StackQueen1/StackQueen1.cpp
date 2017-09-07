@@ -5,7 +5,6 @@
 
 using namespace std;
 
-
 void QueenDemo()
 {
 	queue<int> q0;
@@ -37,7 +36,6 @@ void QueenDemo()
 	}
 }
 
-
 void StackDemo()
 {
 	stack<int> s0;
@@ -68,7 +66,6 @@ void StackDemo()
 		s0.pop();
 	}
 }
-
 
 //（STL）两个栈实现⼀个队列。
 //要求：只能使用栈的pop(), top()和push()，以及测试栈是否为空

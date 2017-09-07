@@ -13,7 +13,6 @@
 //////////////////////////////////////////////////////////////////////
 namespace lock_free
 {
-
 	Queue::Queue(int32 nSize)
 	{
 		m_nSize = nSize;
@@ -54,7 +53,6 @@ namespace lock_free
 		m_queue[pushPos].pObject = pObject;
 		m_queue[pushPos].IsEmpty = false;
 		AtomAdd(&m_nReadAbleCount, 1);
-
 
 		return true;
 	}
@@ -98,5 +96,4 @@ namespace lock_free
 			m_queue[i].pObject = NULL;
 		}
 	}
-
 }

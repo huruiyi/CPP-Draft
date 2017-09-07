@@ -8,6 +8,7 @@ using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Thinktecture.IdentityModel;
 
 namespace ConApp
 {
@@ -15,6 +16,7 @@ namespace ConApp
     {
         public string Name { get; set; }
     }
+
     #region Mutex
 
     internal class ShareRes
@@ -94,7 +96,6 @@ namespace ConApp
         private static void Main(string[] args)
         {
             DateTimeTicks();
-
 
             Console.ReadKey();
         }
@@ -276,8 +277,8 @@ namespace ConApp
 
         #endregion 线程同步
 
-
         #region MyRegion
+
         private static void Demo1()
         {
             // We know how many items we want to insert into the ConcurrentDictionary.
@@ -389,7 +390,9 @@ namespace ConApp
                 Console.WriteLine("intList.Count():" + intList.Count);
             }
         }
-        #endregion
+
+        #endregion MyRegion
+
         public static void DateTimeTicks()
         {
             long agoDateTicks = 636403425351377702;
@@ -399,6 +402,7 @@ namespace ConApp
             DateTime dateNow = new DateTime(dateNowTicks);
             Console.WriteLine(dateAgo.ToString());
             Console.WriteLine(dateNow.ToString());
+
         }
     }
 }

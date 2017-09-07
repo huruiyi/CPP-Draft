@@ -15,7 +15,6 @@ void InitPersonLinkList1(PPerson** conp)
 	(*conp)->next = NULL;
 }
 
- 
 PPerson * InitPersonLinkList2()
 {
 	PPerson * p = malloc(sizeof(PPerson));;
