@@ -821,6 +821,7 @@ void test40()
 }
 void main()
 {
+<<<<<<< HEAD
 	char * src = "Hello,World";
 	char * dest = NULL;
 	int len = strlen(src);
@@ -830,6 +831,9 @@ void main()
 	printf("[%s]\n", dest);
 
 	test39();
+=======
+	test31();
+>>>>>>> be92f563611a3b0bf435cd982b52c23f6472581f
 	system("pause");
 	return 0;
 }
