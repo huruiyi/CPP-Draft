@@ -722,12 +722,87 @@ void test62()
 {
 	//:求0-2000内的所有质数
 }
+
+int demo38_sum(int a)
+{
+	auto int c = 0;
+	static int b = 3;
+	c += 1;
+	b += 2;
+	return a + b + c;
+}
+
+void test38()
+{
+	int i = 0;
+	int a = 2;
+	for (i = 0; i < 5; i++)
+	{
+		printf("%d\n", demo38_sum(a));
+	}
+}
+
+void test39()
+{
+	char * src = "Hello,World";
+	char * dest = NULL;
+	int len = strlen(src)+1;
+	dest = (char *)malloc(len);
+	char * d = dest;
+
+
+	char * s = src;
+	d++;
+	d++ = s--;//d++和s--结果都是常量?
+
+
+	int i = 0;
+	while (len-- != 0)
+	{
+		printf("%d\n", i);
+		
+		d[i++] = *s++;
+	}
+	d[len] = 0;
+	printf("[%s]\n", dest);
+}
+
+void test40()
+{
+	int a = 100;
+	int *const p = NULL;
+	p = &a;
+	*p = a;
+
+	int const *p2 = NULL;
+	p2 = &a;
+	*p2 = a;
+
+	const int *p3 = NULL;
+	p3 = &a;
+	*p3 = a;
+
+	const int const * p4 = NULL;
+	p4 = &a;
+	*p4 = a;
+
+}
 void main()
 {
-	test37();
+	char * src = "Hello,World";
+	char * dest = NULL;
+	int len = strlen(src);
+	dest = (char *)malloc(len + 1);
+
+	memcpy(dest, src, len + 1);
+	printf("[%s]\n", dest);
+
+	test39();
 	system("pause");
 	return 0;
 }
+
+
 
 /*
 
