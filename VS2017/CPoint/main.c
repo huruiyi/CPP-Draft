@@ -565,9 +565,41 @@ void test31()
 	c2[4] = &c1[4];
 
 	int d2[2][3] = { 10,20,30,40,50,60 };
+	int d22[3] = { 100,200,300 };
 
 	//数组指针，表示指向数组的指针
 	int(*c3)[3] = d2;
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d\t", c3[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
+
+	//&d22==
+	printf("%p\n", d22);
+	printf("%p\n", &d22);
+	printf("%p\n", &d22[0]);
+
+	int(*c33)[3] = &d22;
+	for (int i = 0; i < 3; i++)
+	{
+		printf("%d\t", c33[0][i]);
+	}
+	printf("\n");
+
+	int(*c333)[2][3] = d22;
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d\t", *c333[i][j]);
+		}
+		printf("\n");
+	}
 
 	int(*c4)[3] = d2;
 	c4[0][0] = d2[0][0];
@@ -724,7 +756,7 @@ void test62()
 }
 void main()
 {
-	test37();
+	test31();
 	system("pause");
 	return 0;
 }
