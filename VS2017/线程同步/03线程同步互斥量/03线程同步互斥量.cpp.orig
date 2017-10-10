@@ -1,8 +1,12 @@
 #include <iostream>
 #include <mutex>
+<<<<<<< HEAD
+#include <vector>
+=======
 #include <thread>
 #include <vector>
 #include <sstream>
+>>>>>>> 2539467099e34f62809d98c4ad96883c9c6deee1
 
 using namespace std;
 

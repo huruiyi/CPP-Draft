@@ -215,15 +215,15 @@ void test_insert_foreach()
 	push_back_int(hNode, 6);
 
 	insert_node_int(hNode, 2, 2233);
-	insert_node_int(hNode, 6, 66);
-	insert_node_int(hNode, 7, 66);
+	insert_node_int(hNode, 6, 7);
+	insert_node_int(hNode, 7, 8);
 
 	LinkNode * node3 = (LinkNode *)malloc(sizeof(LinkNode));
 	node3->Id = 333;
 	node3->next = NULL;
 	insert_node_nodep(hNode, 3, node3);
 
-	insert_node_nodep(hNode, 66, node3);
+	insert_node_nodep(hNode, 8, node3);
 
 	for_each(hNode);
 
@@ -250,7 +250,7 @@ void test_delete_node()
 
 int main()
 {
-	test_delete_node();
+	test_insert_foreach();
 
 	system("pause");
 	return 0;
