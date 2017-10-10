@@ -37,7 +37,8 @@ public:
 };
 
 //南方香蕉
-class SouthBanana :public Fruit {
+class SouthBanana :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
@@ -46,7 +47,8 @@ protected:
 };
 
 //北方香蕉
-class NorthBanana :public Fruit {
+class NorthBanana :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
@@ -55,7 +57,8 @@ protected:
 };
 
 //南方苹果
-class SouthApple :public Fruit {
+class SouthApple :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
@@ -64,7 +67,8 @@ protected:
 };
 
 //北方苹果
-class NorthApple :public Fruit {
+class NorthApple :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
@@ -73,15 +77,18 @@ protected:
 };
 
 //南方木瓜
-class SouthMg :public Fruit {
+class SouthMg :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
 		cout << "SouthMg.." << endl;
 	}
 };
+
 //北方木瓜
-class NorthMg :public Fruit {
+class NorthMg :public Fruit
+{
 protected:
 	void virtual sayName()
 	{
@@ -108,7 +115,8 @@ protected:
 	}
 };
 
-class SouthFactory :public FruitFactory {
+class SouthFactory :public FruitFactory
+{
 protected:
 	virtual Fruit * getFruitBanana()
 	{

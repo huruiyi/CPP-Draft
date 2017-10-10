@@ -2,6 +2,7 @@
 #include <chrono>
 #include <thread>
 #include <mutex>
+#include <vector>
 
 using namespace std;
 int g_num = 0;

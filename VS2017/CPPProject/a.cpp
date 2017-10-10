@@ -1,5 +1,5 @@
 #include<iostream>
-#include<string>>
+#include<string>
 
 using namespace std;
 
@@ -132,9 +132,70 @@ void test2()
 	int(&p1)[10] = oarry;
 	int *(&p2)[10] = ptrs; //arry是数组的引用，该数组含有10个指针
 }
-int main()
+
+class A
 {
-	test1();
+public:
+	int Aa;
+
+	virtual ~A()
+	{
+		cout << "~A()" << endl;
+	}
+	virtual void FunA()
+	{
+		cout << "A: FunA()" << endl;
+	}
+};
+
+class B :public A
+{
+public:
+	int Ba;
+	virtual void FunA() override
+	{
+		cout << "B: FunA()" << endl;
+	}
+	virtual ~B()
+	{
+		cout << "~B()" << endl;
+	}
+};
+
+class base {
+public:
+	base() {}
+	virtual ~base() = 0;
+};
+
+// Provide a definition for destructor.  
+base::~base() {}
+
+class derived :public base {
+public:
+	derived() {}
+	~derived() {}
+};
+
+int main()
+{ 
+	A *a = new B;
+	a->FunA();
+	((B *)a)->FunA();
+
+	B *b = new B;
+	b->FunA();
+
+	char(*pchar)[10] = new char[2][10];
+	delete[] pchar;
+
+	A * as = new B[10];
+	cout << "as数组大小:" << sizeof(as) << endl;
+	cout << "as数组大小:" << sizeof(as[0]) << endl;
+	cout << "as数组大小:" << sizeof(as) / sizeof(as[0]) << endl;
+	for (int i = 0; i < sizeof(as) / sizeof(as[0]); i++)
+	{
+	}
 
 	getchar();
 	return 0;

@@ -41,8 +41,21 @@ public:
 	}
 };
 
+class Per
+{
+public:
+	int Age;
+	Per(){}
+	~Per()
+	{
+		cout << "½áÊø" << endl;
+	}
+};
 int main()
 {
+	Per *p = new Per;
+	delete p;
+	p->Age = 12;
 	DDProxy *ddproxy = new DDProxy();
 	ddproxy->SaleBook();
 
