@@ -22,7 +22,7 @@ void slow_increment(int id)
 	}
 }
 
-mutex cout_mutex; 
+mutex cout_mutex;
 timed_mutex mutexv;
 
 void job(int id)
@@ -30,7 +30,7 @@ void job(int id)
 	using Ms = chrono::milliseconds;
 	ostringstream stream;
 
-	for (int i = 0; i < 3; ++i) 
+	for (int i = 0; i < 3; ++i)
 	{
 		if (mutexv.try_lock_for(Ms(100)))
 		{
