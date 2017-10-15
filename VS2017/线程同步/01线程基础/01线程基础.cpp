@@ -31,8 +31,26 @@ int SetTextColor(string str)
 	return 0;
 }
 
+int a = 0;
+void f1()
+{
+	for (int i = 0; i < 10000000; ++i)
+	{
+		a++;
+	}
+}
+
+void f2()
+{
+	for (int i = 0; i < 50000000; ++i)
+	{
+		a++;
+	}
+}
+
 int main()
 {
+#if 0
 	std::thread t[10];
 	for (int i = 0; i < 10; ++i)
 	{
@@ -44,6 +62,21 @@ int main()
 		t[i].join();
 	}
 	std::cout << "Launched from the mainn___join end" << endl;
+#endif // 0
+
+#if 1
+	std::thread t1(f1);
+	std::thread t2(f2);
+	t1.join();
+	t2.join();
+
+	std::thread t3(f1);
+	t3.join();
+	std::thread t4(f2);
+	t4.join();
+ 
+	printf("%d\n", a);
+#endif // 0
 
 	getchar();
 	return 0;

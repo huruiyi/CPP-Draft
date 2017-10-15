@@ -9,15 +9,6 @@ public:
 	virtual Fruit *  sayName() = 0;
 };
 
-class FruitFactory
-{
-public:
-	virtual Fruit *getFruit()
-	{
-		return NULL;
-	}
-};
-
 class  Banana :public Fruit
 {
 protected:
@@ -34,6 +25,15 @@ protected:
 	virtual Fruit* sayName()
 	{
 		cout << "Pear ......" << endl;
+		return NULL;
+	}
+};
+
+class FruitFactory
+{
+public:
+	virtual Fruit *getFruit()
+	{
 		return NULL;
 	}
 };
@@ -55,6 +55,7 @@ public:
 		return new Pear();
 	}
 };
+
 int main()
 {
 	FruitFactory *ff = NULL;

@@ -778,21 +778,19 @@ void test39()
 {
 	char * src = "Hello,World";
 	char * dest = NULL;
-	int len = strlen(src)+1;
+	int len = strlen(src) + 1;
 	dest = (char *)malloc(len);
 	char * d = dest;
 
-
 	char * s = src;
-	d++;
-	d++ = s--;//d++和s--结果都是常量?
-
+	//d++;
+	//d++ = s--;//d++和s--结果都是常量?
 
 	int i = 0;
 	while (len-- != 0)
 	{
 		printf("%d\n", i);
-		
+
 		d[i++] = *s++;
 	}
 	d[len] = 0;
@@ -801,26 +799,37 @@ void test39()
 
 void test40()
 {
-	int a = 100;
-	int *const p = NULL;
-	p = &a;
-	*p = a;
+	//int a = 100;
+	//int *const p = NULL;
+	//p = &a;
+	//*p = a;
 
-	int const *p2 = NULL;
-	p2 = &a;
-	*p2 = a;
+	//int const *p2 = NULL;
+	//p2 = &a;
+	//*p2 = a;
 
-	const int *p3 = NULL;
-	p3 = &a;
-	*p3 = a;
+	//const int *p3 = NULL;
+	//p3 = &a;
+	//*p3 = a;
 
-	const int const * p4 = NULL;
-	p4 = &a;
-	*p4 = a;
-
+	//const int const * p4 = NULL;
+	//p4 = &a;
+	//*p4 = a;
 }
+
+//const void fun(int a, int b )
+//{
+//}
+//
+//void fun(int a, int b)
+//{
+//}
+
 void main()
 {
+	char a0[100];
+	char a1[100] = { 0 };
+	char a2[100] = { 1 };
 	char * src = "Hello,World";
 	char * dest = NULL;
 	int len = strlen(src);
@@ -833,8 +842,6 @@ void main()
 	system("pause");
 	return 0;
 }
-
-
 
 /*
 

@@ -189,6 +189,39 @@ void test4()
 	std::for_each(v.begin(), v.end(), std::default_delete<int>());
 }
 
+//c语音中函数没有初始化这一用法
+void fun(int a, int b = 10, int c = 13)
+{
+}
+
+class Test1
+{
+public:
+	Test1(int n)
+	{
+		num = n;
+	}//普通构造函数
+private:
+	int num;
+};
+class Test2
+{
+public:
+	explicit Test2(int n)
+	{
+		num = n;
+	}//explicit(显式)构造函数
+private:
+	int num;
+};
+
+void explicittest()
+{
+	Test1 t1 = 12;//隐式调用其构造函数,成功
+	//Test2 t2 = 12;//编译错误,不能隐式调用其构造函数
+	Test2 t2(12);//显式调用成功
+}
+
 struct  SPercon
 {
 	int Age;
@@ -218,12 +251,21 @@ public:
 	}
 };
 
+
 int main()
 {
 	Derived* p1 = new Derived;
 	Base * p2 = p1;
 	cout << p2->Fun() << endl;
 	cout << (Base*)p2->Fun() << endl;
+	
+	auto func(int i)->int(*)[10];
+	int odd[] = { 1,3,5,7,9 };
+	int even[] = { 0,2,4,6,8 };
+	//decltype(odd) *arrPtr(int i) { return (i % 2) ? &odd : &even; };
+
+	autoDemo();
+	getchar();
 
 	return 0;
 }
