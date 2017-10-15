@@ -248,9 +248,38 @@ void test_delete_node()
 	free_linknode(hNode);
 }
 
+void ReseveLinkNode(LinkNode * hNode)
+{
+	LinkNode * prev = NULL;
+	LinkNode * current = hNode;
+	LinkNode * next = current->next;
+	/*while (next->next)
+	{
+		next = next->next;
+	}*/
+
+	current->next = prev;
+	next->next = prev;
+}
+
+void reservelink()
+{
+	LinkNode * hNode = InitLinkNode();
+	push_back_int(hNode, 1);
+	push_back_int(hNode, 2);
+	push_back_int(hNode, 3);
+	push_back_int(hNode, 4);
+	push_back_int(hNode, 5);
+	push_back_int(hNode, 6);
+	for_each(hNode);
+	ReseveLinkNode(hNode);
+}
+
+
 int main()
 {
-	test_insert_foreach();
+	printf("%d\n", *fp);
+	reservelink();
 
 	system("pause");
 	return 0;

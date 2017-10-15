@@ -188,14 +188,42 @@ void test4()
 		v.push_back(new int(n));
 	std::for_each(v.begin(), v.end(), std::default_delete<int>());
 }
+
+struct  SPercon
+{
+	int Age;
+	char *Name;
+};
+
+class CPerson
+{
+	int Age;
+	char * Name;
+};
+
+class Base
+{
+public:
+	virtual int   Fun()
+	{
+		return 0;
+	}
+};
+class Derived : public Base
+{
+public:
+	int  Fun() override
+	{
+		return 1;
+	}
+};
+
 int main()
 {
-	auto func(int i)->int(*)[10];
-	int odd[] = { 1,3,5,7,9 };
-	int even[] = { 0,2,4,6,8 };
-	//decltype(odd) *arrPtr(int i) { return (i % 2) ? &odd : &even; };
+	Derived* p1 = new Derived;
+	Base * p2 = p1;
+	cout << p2->Fun() << endl;
+	cout << (Base*)p2->Fun() << endl;
 
-	autoDemo();
-	getchar();
 	return 0;
 }
