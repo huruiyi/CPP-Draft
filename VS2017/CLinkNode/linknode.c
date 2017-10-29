@@ -278,7 +278,6 @@ void reservelink()
 
 int main()
 {
-	printf("%d\n", *fp);
 	reservelink();
 
 	system("pause");

@@ -15,8 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="代理模式.cpp">
+    <ClCompile Include="03_抽象工厂.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="03_抽象工厂.cd" />
   </ItemGroup>
 </Project>

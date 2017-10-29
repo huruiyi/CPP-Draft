@@ -15,11 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="简单工厂.cpp">
+    <ClCompile Include="02_工厂方法.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="简单工厂.cd" />
+    <None Include="02_工厂方法.cd" />
   </ItemGroup>
 </Project>
