@@ -59,7 +59,7 @@ void spinlock_click()
 
 int main()
 {
-	int thnum = 100;
+	int thnum = 10;
 	clock_t start = clock();
 	boost::thread_group threads;
 	for (int i = 0; i < thnum; ++i)
