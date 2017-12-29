@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "学生成绩", "VS2017\学生成绩\学生成绩.vcxproj", "{651574FE-AFDC-47BC-A2E6-7DB09991B4F0}"
 EndProject
@@ -94,6 +94,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05_建造者模式", "VS2017\设计模式\05_建造者模式\05_建造者模式.vcxproj", "{D2013AAB-8279-49D2-902C-75E5703DFD93}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "00_基本单列", "VS2017\设计模式\00_基本单列\00_基本单列.vcxproj", "{611396E8-8104-4783-B658-EA6B7CF38780}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CLR多线程", "VS2017\CLR多线程\CLR多线程.vcxproj", "{C99DF933-3050-4670-AA87-5819142B98EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -658,6 +660,18 @@ Global
 		{611396E8-8104-4783-B658-EA6B7CF38780}.Release|x64.Build.0 = Release|x64
 		{611396E8-8104-4783-B658-EA6B7CF38780}.Release|x86.ActiveCfg = Release|Win32
 		{611396E8-8104-4783-B658-EA6B7CF38780}.Release|x86.Build.0 = Release|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|ARM.ActiveCfg = Debug|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|x64.ActiveCfg = Debug|x64
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|x64.Build.0 = Debug|x64
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|x86.ActiveCfg = Debug|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Debug|x86.Build.0 = Debug|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|Any CPU.ActiveCfg = Release|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|ARM.ActiveCfg = Release|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|x64.ActiveCfg = Release|x64
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|x64.Build.0 = Release|x64
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|x86.ActiveCfg = Release|Win32
+		{C99DF933-3050-4670-AA87-5819142B98EE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -177,7 +177,7 @@ public:
 	~derived() {}
 };
 
-int main()
+int maina()
 { 
 	A *a = new B;
 	a->FunA();
