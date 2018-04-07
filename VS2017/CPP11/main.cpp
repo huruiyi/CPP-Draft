@@ -251,14 +251,13 @@ public:
 	}
 };
 
-
 int main()
 {
 	Derived* p1 = new Derived;
 	Base * p2 = p1;
 	cout << p2->Fun() << endl;
 	cout << (Base*)p2->Fun() << endl;
-	
+
 	auto func(int i)->int(*)[10];
 	int odd[] = { 1,3,5,7,9 };
 	int even[] = { 0,2,4,6,8 };
